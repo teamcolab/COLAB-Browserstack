@@ -1,0 +1,34 @@
+{
+  "name": "node-js-playwright-browserstack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test:visual": "BROWSERSTACK_BUILD_NAME='VACU Visual Regression Tests' npx percy exec -- npx browserstack-node-sdk playwright test tests/test-visualregression.js --config=./playwright.config.js",
+    "test:visual:smoke": "BROWSERSTACK_BUILD_NAME='VACU Visual Regression Smoke Test (Chrome Only)' BROWSERSTACK_CONFIG_FILE=browserstack.smoke.yml npx percy exec -- npx browserstack-node-sdk playwright test tests/test-visualregression.js --config=./playwright.config.js",
+    "test:visual:compare": "node scripts/compare-environments.js",
+    "test:visual:compare:smoke": "node scripts/compare-environments.js --smoke",
+    "test:behavior:search": "BROWSERSTACK_BUILD_NAME='VACU Behavior Tests - Search' npx browserstack-node-sdk playwright test tests/test-search.js --config=./playwright.behavior.config.js",
+    "test:behavior:news": "BROWSERSTACK_BUILD_NAME='VACU Behavior Tests - News' npx browserstack-node-sdk playwright test tests/test-news.js --config=./playwright.behavior.config.js",
+    "test:behavior:misc": "BROWSERSTACK_BUILD_NAME='VACU Behavior Tests - Misc' npx browserstack-node-sdk playwright test tests/test-misc-func.js --config=./playwright.behavior.config.js",
+    "test:behavior:help": "BROWSERSTACK_BUILD_NAME='VACU Behavior Tests - Help' npx browserstack-node-sdk playwright test tests/test-help-support-search.js --config=./playwright.behavior.config.js",
+    "test:behavior:branch": "BROWSERSTACK_BUILD_NAME='VACU Behavior Tests - Branch' npx browserstack-node-sdk playwright test tests/test-branch-atm-locator.js --config=./playwright.behavior.config.js",
+    "test:behavior:banking": "BROWSERSTACK_BUILD_NAME='VACU Behavior Tests - Banking' npx browserstack-node-sdk playwright test tests/test-online-banking-menu.js --config=./playwright.behavior.config.js",
+    "test:behavior:learn": "BROWSERSTACK_BUILD_NAME='VACU Behavior Tests - Learn' npx browserstack-node-sdk playwright test tests/test-new-learn.js --config=./playwright.behavior.config.js",
+    "test:behavior": "BROWSERSTACK_BUILD_NAME='VACU Behavior Tests - All' npx browserstack-node-sdk playwright test tests/test-search.js tests/test-news.js tests/test-misc-func.js tests/test-help-support-search.js tests/test-branch-atm-locator.js tests/test-online-banking-menu.js tests/test-new-learn.js --config=./playwright.behavior.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@percy/cli": "^1.31.1",
+    "@percy/playwright": "^1.0.9",
+    "@playwright/test": "^1.53.0",
+    "browserstack-node-sdk": "^1.42.0",
+    "playwright-core": "^1.53.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1"
+  }
+}

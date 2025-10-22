@@ -1,0 +1,57 @@
+# =============================
+# Set BrowserStack Credentials
+# =============================
+# Add your BrowserStack userName and accessKey here or set BROWSERSTACK_USERNAME and
+# BROWSERSTACK_ACCESS_KEY as env variables
+userName: ${BROWSERSTACK_USERNAME}
+accessKey: ${BROWSERSTACK_ACCESS_KEY}
+
+# =============================
+# BrowserStack SDK Settings
+# =============================
+# Reduce verbose output from BrowserStack SDK
+verbose: false
+logLevel: error
+# Extended timeouts for long-running tests
+idleTimeout: 300000
+commandTimeout: 300000
+
+# ======================
+# BrowserStack Reporting
+# ======================
+# The following capabilities are used to set up reporting on BrowserStack:
+# Set 'projectName' to the name of your project. Example, Marketing Website
+projectName: ${BROWSERSTACK_PROJECT_NAME}
+# Set `buildName` as the name of the job / testsuite being run
+buildName: ${BROWSERSTACK_BUILD_NAME}
+# `buildIdentifier` is a unique id to differentiate every execution that gets appended to
+# buildName. Choose your buildIdentifier format from the available expressions:
+# ${BUILD_NUMBER} (Default): Generates an incremental counter with every execution
+# ${DATE_TIME}: Generates a Timestamp with every execution. Eg. 05-Nov-19:30
+# Read more about buildIdentifiers here -> https://www.browserstack.com/docs/automate/selenium/organize-tests
+buildIdentifier: '${BROWSERSTACK_BUILD_IDENTIFIER}' # Supports strings along with either/both ${expression}
+
+# =======================================
+# Platforms (Browsers / Devices to test)
+# =======================================
+# Smoke test - Chrome only for faster testing
+platforms:
+  - os: OS X
+    osVersion: Tahoe
+    browserName: chrome
+    browserVersion: '141'
+
+# =======================
+# Parallels per Platform
+# =======================
+parallelsPerPlatform: 1
+
+framework: playwright
+source: node-js-playwright-sample-sdk:v1
+
+# ===================
+# Debugging features
+# ===================
+consoleLogs: errors
+debug: false
+testObservability: false
