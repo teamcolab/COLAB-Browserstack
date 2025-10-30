@@ -61,7 +61,7 @@ pages.forEach(({ name, path }) => {
       
       await page.goto(url, { 
         waitUntil,
-        timeout: 5 * 60 * 1000 // 5 minutes
+        timeout: 1 * 60 * 1000 // 1 minutes
       });
       
       // Check if navigation actually succeeded
