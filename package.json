@@ -5,10 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test:visual": "BROWSERSTACK_BUILD_NAME='VACU Visual Regression Tests' npx percy exec -- npx browserstack-node-sdk playwright test tests/test-visualregression.js --config=./playwright.config.js",
-    "test:visual:smoke": "BROWSERSTACK_BUILD_NAME='VACU Visual Regression Smoke Test (Chrome Only)' BROWSERSTACK_CONFIG_FILE=browserstack.smoke.yml npx percy exec -- npx browserstack-node-sdk playwright test tests/test-visualregression.js --config=./playwright.config.js",
+    "test:visual": "node scripts/visual-test.js",
     "test:visual:compare": "node scripts/compare-environments.js",
-    "test:visual:compare:smoke": "node scripts/compare-environments.js --smoke",
     "test:behavior:search": "BROWSERSTACK_BUILD_NAME='VACU Behavior Tests - Search' npx browserstack-node-sdk playwright test tests/test-search.js --config=./playwright.behavior.config.js",
     "test:behavior:news": "BROWSERSTACK_BUILD_NAME='VACU Behavior Tests - News' npx browserstack-node-sdk playwright test tests/test-news.js --config=./playwright.behavior.config.js",
     "test:behavior:misc": "BROWSERSTACK_BUILD_NAME='VACU Behavior Tests - Misc' npx browserstack-node-sdk playwright test tests/test-misc-func.js --config=./playwright.behavior.config.js",

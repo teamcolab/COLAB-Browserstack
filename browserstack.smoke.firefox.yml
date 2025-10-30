@@ -34,12 +34,12 @@ buildIdentifier: '${BROWSERSTACK_BUILD_IDENTIFIER}' # Supports strings along wit
 # =======================================
 # Platforms (Browsers / Devices to test)
 # =======================================
-# Smoke test - Chrome only for faster testing
+# Smoke test - Firefox only
 platforms:
   - os: OS X
     osVersion: Tahoe
-    browserName: chrome
-    browserVersion: '141'
+    browserName: playwright-firefox
+    browserVersion: '140'
 
 # =======================
 # Parallels per Platform

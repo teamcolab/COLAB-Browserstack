@@ -34,12 +34,15 @@ buildIdentifier: '${BROWSERSTACK_BUILD_IDENTIFIER}' # Supports strings along wit
 # =======================================
 # Platforms (Browsers / Devices to test)
 # =======================================
-# Smoke test - Chrome only for faster testing
+# Smoke test - iOS Safari only
 platforms:
-  - os: OS X
-    osVersion: Tahoe
-    browserName: chrome
-    browserVersion: '141'
+  - os: iOS
+    osVersion: 17.5
+    browserName: safari
+    device: iPhone 15 Pro
+    browserstack.deviceName: iPhone 15 Pro
+    browserstack.deviceOrientation: portrait
+    browserstack.realMobile: true
 
 # =======================
 # Parallels per Platform

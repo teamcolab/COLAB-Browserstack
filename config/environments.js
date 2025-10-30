@@ -10,7 +10,7 @@ const environments = [
   },
   {
     name: 'live',
-    host: 'https://vacu.org/'
+    host: 'https://www.vacu.org/'
   }
 ];
 

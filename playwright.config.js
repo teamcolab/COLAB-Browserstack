@@ -8,7 +8,7 @@ const config = {
   testMatch: '**/test-*.js',
 
   /* Maximum time one test can run for. */
-  timeout: 3 * 60 * 60 * 1000, // 3 hours for visual regression tests
+  timeout: 5 * 60 * 1000, // 5 minutes for visual regression tests
   use: {
     actionTimeout: 5 * 60 * 1000,
     navigationTimeout: 5 * 60 * 1000
@@ -18,10 +18,10 @@ const config = {
      * Maximum time expect() should wait for the condition to be met.
      * For example in `await expect(locator).toHaveText();`
      */
-    timeout: 50000,
+    timeout: 5 * 60 * 1000,
   },
   /* tests in parallel - conservative setting for BrowserStack limits */
-  workers: 2,
+  workers: 1,
 
   retries: 1,
 

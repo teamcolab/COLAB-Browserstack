@@ -34,7 +34,7 @@ buildIdentifier: '${BROWSERSTACK_BUILD_IDENTIFIER}' # Supports strings along wit
 # =======================================
 # Platforms (Browsers / Devices to test)
 # =======================================
-# Smoke test - Chrome only for faster testing
+# Smoke test - Chrome only
 platforms:
   - os: OS X
     osVersion: Tahoe
